@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EL RINCÓN DE MARIO</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    button {
+      background-color: #ffcc00;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 5px 10px rgba(255, 204, 0, 0.6);
+      transition: background-color 0.3s ease;
+      color: #222;
+    }
+
+    button:hover {
+      background-color: #e6b800;
+    }
+
+    #popupContent {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #222;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+
+    #popupContent a {
+      color: #2575fc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #popupContent a:hover {
+      text-decoration: underline;
+    }
+
+    ul.redes {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      text-align: left;
+    }
+
+    ul.redes li {
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>EL RINCÓN DE MARIO</h1>
+
+  <button onclick="abrirPresentacion()">Ver mi presentación y redes</button>
+
+  <script>
+    function abrirPresentacion() {
+      const contenido = `
+        <div id="popupContent">
+          <p><strong>Escritor en formación, estudiante universitario y amante de las letras, el arte y la vida sencilla.</strong></p>
+          <hr />
+          <p>🔗 <strong>Mis redes y espacios digitales:</strong></p>
+          <ul class="redes">
+            <li>📸 Instagram: <a href="https://www.instagram.com/mario_gb.2023/" target="_blank">https://www.instagram.com/mario_gb.2023/</a></li>
+            <li>🎥 TikTok: <a href="https://www.tiktok.com/@zzz.go.1" target="_blank">https://www.tiktok.com/@zzz.go.1</a></li>
+            <li>📘 Facebook: <a href="https://web.facebook.com/profile.php?id=61558849246044" target="_blank">https://web.facebook.com/profile.php?id=61558849246044</a></li>
+            <li>📺 YouTube: <a href="https://www.youtube.com/@ElRincondeMario-vlog" target="_blank">https://www.youtube.com/@ElRincondeMario-vlog</a></li>
+            <li>📚 Wattpad: <a href="https://www.wattpad.com/user/Mario_24g" target="_blank">https://www.wattpad.com/user/Mario_24g</a></li>
+            <li>🐦 X / Twitter: <a href="https://x.com/sants_gonzales" target="_blank">https://x.com/sants_gonzales</a></li>
+            <li>🔗 LinkedIn: <a href="https://www.linkedin.com/in/mario-gonzales-b76a6b160/" target="_blank">https://www.linkedin.com/in/mario-gonzales-b76a6b160/</a></li>
+          </ul>
+        </div>
+      `;
+
+      const ventana = window.open(
+        '',
+        'PresentacionMario',
+        'width=500,height=450,top=200,left=500,resizable=yes,scrollbars=yes'
+      );
+
+      ventana.document.write(`
+        <html>
+          <head>
+            <title>Presentación de Mario</title>
+            <style>
+              body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+                background: #fefefe;
+                color: #222;
+              }
+              a {
+                color: #2575fc;
+                text-decoration: none;
+                font-weight: bold;
+              }
+              a:hover {
+                text-decoration: underline;
+              }
+              hr {
+                margin: 15px 0;
+              }
+              ul {
+                padding-left: 20px;
+              }
+            </style>
+          </head>
+          <body>
+            ${contenido}
+          </body>
+        </html>
+      `);
+      ventana.document.close();
+    }
+  </script>
+
+</body>
+</html>
